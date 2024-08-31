@@ -152,10 +152,40 @@
 
     \section{Solution}
 
-    I have chosen Honda as an example. The average ROI for Honda is 5.5\% and the last year's ROI is 5.2\%. 
-    The PCDM is the profit per customer driven mile. Since Honda makes a profit of $\$3,000$ per car sold
+    I have chosen Honda as an example. The ROI for Honda in 2023 is the average of the data points from 2023,
+    per the data available on \href{https://www.macrotrends.net/stocks/charts/HMC/honda/roi}{Macrotrends}.
+    These data points are 4.85\%, 5.85\%, 6.15\%, and 6.53\% respectively for the quarters of 2023. The average ROI
+    for Honda in 2023 is given by,
 
+    \begin{align*}
+        \text{Average ROI} &= \frac{4.85 + 5.85 + 6.15 + 6.53}{4} \\
+        &= 5.845\%
+    \end{align*}
 
+    The PCDM is the profit per customer driven mile. In 2023, Honda recorded an operating profit
+    of approximately 781 billion Japanese yen. 
+    With around 4.5 million cars sold, this translates to an average profit of about 
+    173,555 yen (roughly \$1,200 USD) per car. The source for this data 
+    is \href{https://www.statista.com/statistics/1126585/honda-operating-profit/}{Statista}.
+
+    On average, Honda cars have a mileage lifespan of about 200,000 miles. The source for this data is
+    \href{https://www.brickellhonda.com/the-longevity-of-honda-cars-mileage-maintenance-and-more}{Brickell Honda}.
+
+    Therefore, we can calculate the PCDM for Honda in 2023 as follows,
+
+    \begin{align*}
+        \text{PCDM} &= \frac{\text{Average profit per car}}{\text{Average mileage per car}} \\
+        &= \frac{\$1,200}{200,000} \\
+        &= \$0.006 \text{ per mile}
+    \end{align*}
+
+    Let us compound the PCDM with the average ROI for Honda in 2023,
+
+    \begin{align*}
+        \text{PCDM} \times \text{(1 + ROI)}^{10} &= \$0.006 \times (1 + 0.05845)^{10} \\
+        &= \$0.006 \times 1.765 \\
+        &= \$0.01 \text{ per mile}
+    \end{align*}
 
 \end{homeworkProblem}
 
