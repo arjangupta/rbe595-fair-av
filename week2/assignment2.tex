@@ -1,0 +1,205 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{matlab-prettifier}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\DeclareMathOperator{\EX}{\mathbb{E}}% expected value
+
+\graphicspath{{./images/}}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClassShort\ \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem {#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+    % \stepcounter{#1}
+    \nobreak\extramarks{{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+
+\newcommand{\problemNumber}{0.0}
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \renewcommand{\problemNumber}{{#1}}
+    \section{\problemNumber}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{\problemNumber}
+}{
+    \exitProblemHeader{\problemNumber}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Class
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Assignment \#2}
+\newcommand{\hmwkClassShort}{RBE 595 (FAIR-AV)}
+\newcommand{\hmwkClass}{RBE 595 --- FAIR-AV}
+\newcommand{\hmwkAuthorName}{\textbf{Arjan Gupta}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass}}\\
+    % \textmd{\textbf{\hmwkTitle}}\\
+    \textmd{\textbf{Assignment \#2}}\\
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[2]{\frac{\mathrm{d}}{\mathrm{d}#2} \left(#1\right)}
+
+% For compact derivatives
+\newcommand{\derivcomp}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #2} \left(#1\right)}
+
+% For compact partial derivatives
+\newcommand{\pderivcomp}[2]{\frac{\partial #1}{\partial #2}}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\nobreak\extramarks{Problem 1}{}\nobreak{}
+
+\pagebreak
+
+\begin{homeworkProblem}[Problem 1]
+
+    If the digital driver or virtual driver is used to control an autonomous vehicle, what changes in the vehicle have to be made?
+
+    Hint \#1: Think of the framework of shared control and replace the human driver with a digital driver.
+
+    Hint \#2: The changes in the vehicle could be from hardware, software, and system architecture. 
+
+    \section{Solution}
+
+    The digital driver or virtual driver is a software system that is responsible 
+    for controlling the vehicle. The digital driver is responsible for making
+    decisions about the vehicle's control inputs, such as steering, throttle, and
+    braking. The digital driver is also responsible for perceiving the environment
+    around the vehicle and making decisions based on this perception.
+
+    The digital driver is a replacement for the human driver in an autonomous vehicle.
+    The digital driver is responsible for all aspects of driving the vehicle, including
+    perception, planning, and control. The digital driver must be able to perceive the
+    environment around the vehicle, plan a safe and efficient path through this environment,
+    and control the vehicle to follow this path.
+
+    In order to use a digital driver to control an autonomous vehicle, several changes
+    must be made to the vehicle. These changes can be categorized into three main areas:
+    hardware, software, and system architecture.
+
+    \begin{enumerate}
+        \item \textbf{Hardware Changes:} The hardware of the vehicle must be modified to
+        support the digital driver. This may include the addition of sensors, such as cameras,
+        lidar, radar, and ultrasonic sensors, to enable the digital driver to perceive the
+        environment around the vehicle. The vehicle may also need additional computing power
+        to run the digital driver software and process the sensor data in real-time. In addition,
+        the vehicle may need actuators, such as electric motors, to control the vehicle's steering,
+        throttle, and braking systems.
+
+        \item \textbf{Software Changes:} The software of the vehicle must be modified to
+        support the digital driver. This may include the development of perception, planning,
+        and control algorithms to enable the digital driver to make decisions about the vehicle's
+        control inputs. The software must also be able to interface with the vehicle's sensors
+        and actuators to enable the digital driver to perceive the environment and control the
+        vehicle in real-time.
+
+        \item \textbf{System Architecture Changes:} The system architecture of the vehicle
+        must be modified to support the digital driver. This may include the development of a
+        distributed computing system to enable the digital driver to run on multiple processors
+        and communicate with the vehicle's sensors and actuators. The system architecture must
+        also be fault-tolerant to ensure the safe operation of the vehicle in the event of a
+        software or hardware failure.
+    \end{enumerate}
+
+    In conclusion, the digital driver is a replacement for the human driver in an autonomous
+    vehicle. In order to use a digital driver to control an autonomous vehicle, several changes
+    must be made to the vehicle, including hardware, software, and system architecture changes.
+
+\end{homeworkProblem}
+
+\end{document}
