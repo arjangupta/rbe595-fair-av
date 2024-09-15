@@ -1,0 +1,191 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{matlab-prettifier}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\DeclareMathOperator{\EX}{\mathbb{E}}% expected value
+
+\graphicspath{{./images/}}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClassShort\ \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem {#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+    % \stepcounter{#1}
+    \nobreak\extramarks{{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+
+\newcommand{\problemNumber}{0.0}
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \renewcommand{\problemNumber}{{#1}}
+    \section{\problemNumber}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{\problemNumber}
+}{
+    \exitProblemHeader{\problemNumber}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Class
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Assignment \#3}
+\newcommand{\hmwkClassShort}{RBE 595 (FAIR-AV)}
+\newcommand{\hmwkClass}{RBE 595 --- FAIR-AV}
+\newcommand{\hmwkAuthorName}{\textbf{Arjan Gupta}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass}}\\
+    % \textmd{\textbf{\hmwkTitle}}\\
+    \textmd{\textbf{Assignment \#3}}\\
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[2]{\frac{\mathrm{d}}{\mathrm{d}#2} \left(#1\right)}
+
+% For compact derivatives
+\newcommand{\derivcomp}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #2} \left(#1\right)}
+
+% For compact partial derivatives
+\newcommand{\pderivcomp}[2]{\frac{\partial #1}{\partial #2}}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\nobreak\extramarks{Problem 1}{}\nobreak{}
+
+\pagebreak
+
+\begin{homeworkProblem}[Problem 1]
+
+    Read The One Hundred Year Study on Artificial Intelligence (AI100) 2021 Study Panel Report.
+    Based on what you have read and your understanding of AV, provide a one-page summary that covers answers to the following two questions:
+
+    how AV is challenging AI? (3pt)
+
+    how AV is providing opportunities for AI? (2pt)
+
+    \section{Solution}
+
+    \subsection{Challenges}
+
+    Autonomous Vehicles (AVs) present a unique set of challenges to the field of Artificial Intelligence (AI). The AI100 report highlights several key challenges that AVs pose to AI research:
+
+    \begin{enumerate}
+        \item \textbf{Safety}: AVs must be able to operate safely in a wide variety of environments, including urban, rural, and highway settings. Ensuring that AVs can operate safely in these environments requires AI systems that can understand and respond to complex and dynamic situations.
+        \item \textbf{Interpretability}: AVs must be able to explain their decisions and actions to human operators and other road users. This requires AI systems that are interpretable and transparent, so that their decisions can be understood and trusted.
+        \item \textbf{Robustness}: AVs must be able to operate reliably in the face of uncertainty, noise, and adversarial attacks. This requires AI systems that are robust and resilient, so that they can continue to operate safely and effectively in challenging conditions.
+        \item \textbf{Ethics}: AVs must be able to make ethical decisions in situations where there is no clear right answer. This requires AI systems that can reason about ethical principles and trade-offs, and make decisions that are consistent with human values and norms.
+        \item \textbf{Regulation}: AVs must be able to comply with a wide range of legal and regulatory requirements. This requires AI systems that can reason about legal and regulatory constraints, and ensure that AVs operate in a manner that is consistent with these requirements.
+        \item \textbf{Societal Impact}: AVs have the potential to have a significant impact on society, including changes to transportation, employment, and urban planning. This requires AI systems that can reason about the social and economic implications of AVs, and ensure that they are developed and deployed in a way that benefits society as a whole.
+        \item \textbf{Human-AI Interaction}: AVs must be able to interact with human drivers, passengers, and other road users in a way that is safe, efficient, and intuitive. This requires AI systems that can understand human behavior and intentions, and respond appropriately in a wide range of situations.
+        \item \textbf{Long-Term Autonomy}: AVs must be able to operate autonomously for extended periods of time, without human intervention. This requires AI systems that can learn and adapt to changing conditions, and continue to operate safely and effectively over the long term.
+        \item \textbf{Scalability}: AVs must be able to operate at scale, in a wide range of environments and conditions. This requires AI systems that can be deployed and maintained across a large fleet of vehicles, and that can scale to meet the demands of a growing AV market.
+        \item \textbf{Sustainability}: AVs must be able to operate in a way that is environmentally sustainable, and that minimizes their impact on the planet. This requires AI systems that can reason about environmental constraints and trade-offs, and ensure that AVs operate in a way that is consistent with sustainability goals.
+    \end{enumerate}
+
+    \subsection{Opportunities}
+
+    Despite the challenges that AVs pose to AI research, they also present a number of opportunities for advancing the field. The AI100 report highlights several key opportunities that AVs provide for AI research:
+
+    \begin{enumerate}
+        \item \textbf{Data Collection}: AVs generate large amounts of data about their environment, including images, videos, and sensor readings. This data can be used to train AI systems for a wide range of tasks, including perception, planning, and control.
+        \item \textbf{Simulation}: AVs can be used to collect data in simulated environments, which can be used to train and test AI systems in a safe and controlled manner. This allows researchers to explore a wide range of scenarios and conditions, and to develop AI systems that are robust and reliable.
+        \item \textbf{Collaboration}: AVs can be used to study human behavior and interaction in a wide range of settings, including transportation, urban planning, and social networks. This allows researchers to develop AI systems that can understand and respond to human behavior in
+        \item \textbf{Real-Time Decision Making}: AVs require AI systems that can make decisions in real time, based on a wide range of sensor inputs and environmental conditions. This requires AI systems that are fast, efficient, and reliable, and that can respond to changing conditions in a timely manner.
+        \item \textbf{Adaptation}: AVs must be able to adapt to changing conditions, including weather, traffic, and road conditions. This requires AI systems that can learn and adapt to new situations, and that can continue to operate safely and effectively in a wide range of environments.
+    \end{enumerate}
+    
+\end{homeworkProblem}
+
+\end{document}
