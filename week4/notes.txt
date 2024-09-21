@@ -1,0 +1,25 @@
+# Lecture 1
+- history of robots
+- contemporary usages of robots
+- different contexts and types of robots
+- some graphs about the growth of robots
+
+# Lecture 2 - robotics in manufacturing
+- industry 4.0 main areas 
+  - digital mgt tool
+  - advanced analytics
+  - digital ways of working
+  - advanced production method and material
+- factory of tomorrow
+  - digital twin: as designed, as built, as supplied, as operated, customer copy
+- ford cobots: https://www.youtube.com/watch?v=-ABi4lBs104
+- cobots: collaborative robots
+- flexqube robot video
+- vision based flexible inspection system example
+- agility robotics demo video
+- conclusions:
+  - robotics are important in industry 4.0
+  - fully autonomous robots will help mfg
+  - mass prod of AVs will bring down sensor and compute costs, which robots will benefit from
+  - cobots are very important robots
+  - AI is essential to F.O.T. (factory of tomorrow)
