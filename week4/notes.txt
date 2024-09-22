@@ -30,4 +30,16 @@
 - rest of the lecture is about analyzing automation in first mile, middle mile, and last mile delivery
 
 # Lecture 4 - robotics basics
--
+- There are 6 main technologies in robotics
+  - systems development
+  - human robot interaction
+  - mechatronics
+  - perception
+  - navigation
+  - cognition
+- robotic system ability slide shown
+    - decisional autonomy is the one we're interested in
+- decisional autonomy: basics for wheeled robots
+    - sensors -> perception
+    - goal selection -> slam
+    - path planning -> motion control -> wheel commands
