@@ -23,3 +23,11 @@
   - mass prod of AVs will bring down sensor and compute costs, which robots will benefit from
   - cobots are very important robots
   - AI is essential to F.O.T. (factory of tomorrow)
+
+# Lecture 3 - robotics in mobility
+- global package delivery volume and cost graphs
+- amazon shipping costs graph
+- rest of the lecture is about analyzing automation in first mile, middle mile, and last mile delivery
+
+# Lecture 4 - robotics basics
+-
