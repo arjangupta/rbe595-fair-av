@@ -1,0 +1,191 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{matlab-prettifier}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\DeclareMathOperator{\EX}{\mathbb{E}}% expected value
+
+\graphicspath{{./images/}}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClassShort\ \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem {#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+    % \stepcounter{#1}
+    \nobreak\extramarks{{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+
+\newcommand{\problemNumber}{0.0}
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \renewcommand{\problemNumber}{{#1}}
+    \section{\problemNumber}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{\problemNumber}
+}{
+    \exitProblemHeader{\problemNumber}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Class
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Assignment \#5}
+\newcommand{\hmwkClassShort}{RBE 595 (FAIR-AV)}
+\newcommand{\hmwkClass}{RBE 595 --- FAIR-AV}
+\newcommand{\hmwkAuthorName}{\textbf{Arjan Gupta}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass}}\\
+    % \textmd{\textbf{\hmwkTitle}}\\
+    \textmd{\textbf{Assignment \#5}}\\
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[2]{\frac{\mathrm{d}}{\mathrm{d}#2} \left(#1\right)}
+
+% For compact derivatives
+\newcommand{\derivcomp}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #2} \left(#1\right)}
+
+% For compact partial derivatives
+\newcommand{\pderivcomp}[2]{\frac{\partial #1}{\partial #2}}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\nobreak\extramarks{Problem 1}{}\nobreak{}
+
+\pagebreak
+
+\begin{homeworkProblem}[Problem 1]
+
+    Determine the automation level of the traffic jam assistance feature. Please provide your own definition of ODD.
+
+    \section{Solution}
+
+    Operational Design Domain (ODD) are the operating conditions under which a system/feature
+    is designed to function, including but not limited to:
+
+    \begin{itemize}
+        \item environmental
+        \item geographical
+        \item time-of-day restrictions
+        \item and/or the requisite presence or absence of certain types of traffic or roadway characteristics
+    \end{itemize}
+
+    For the traffic jam assistance feature, the ODD would be:
+
+    \begin{itemize}
+        \item The feature is designed to function in traffic jam conditions (low speeds, stop-and-go traffic)
+        \item The feature is designed to function in urban environments
+        \item The feature is designed to function in daylight conditions
+        \item The feature is designed to function during rush hour
+        \item The feature is designed to function in the presence of other vehicles
+        \item The feature is designed to function in the presence of pedestrians
+        \item The feature is designed to function in the presence of traffic signals
+        \item The feature is designed to function in the presence of road signs
+    \end{itemize}
+
+    Additionally, the feature could potentially be able to communicate with other vehicles
+    to coordinate traffic flow. The feature would be able to take over control of the vehicle
+    in traffic jam conditions and would be completely aware of the environmental conditions as outlined
+    in the ODD. However, the driver would need to be present to override control for any corner cases,
+    and the driver would be required to take over control of the vehicle
+    when requested (for example, when the traffic jam clears up).\newline
+    
+    Since the ODD is limited to traffic jam conditions and can only perform DDT (Dynamic Driving Task)
+    in these conditions, but cannot perform DDT-fallback, the automation level of the traffic jam assistance feature
+    would be Level 3.
+
+\end{homeworkProblem}
+
+\end{document}
