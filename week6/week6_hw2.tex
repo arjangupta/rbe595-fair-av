@@ -1,0 +1,193 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{matlab-prettifier}
+
+\DeclareRobustCommand{\bbone}{\text{\usefont{U}{bbold}{m}{n}1}}
+
+\DeclareMathOperator{\EX}{\mathbb{E}}% expected value
+
+\graphicspath{{./images/}}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClassShort\ \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem {#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{{#1} (continued)}{{#1} continued on next page\ldots}\nobreak{}
+    % \stepcounter{#1}
+    \nobreak\extramarks{{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+
+\newcommand{\problemNumber}{0.0}
+
+\newenvironment{homeworkProblem}[1][-1]{
+    \renewcommand{\problemNumber}{{#1}}
+    \section{\problemNumber}
+    \setcounter{partCounter}{1}
+    \enterProblemHeader{\problemNumber}
+}{
+    \exitProblemHeader{\problemNumber}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Class
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Week 6 Homework \#2}
+\newcommand{\hmwkClassShort}{RBE 595 (FAIR-AV)}
+\newcommand{\hmwkClass}{RBE 595 --- FAIR-AV}
+\newcommand{\hmwkAuthorName}{\textbf{Arjan Gupta}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass}}\\
+    % \textmd{\textbf{\hmwkTitle}}\\
+    \textmd{\textbf{Week 6 Homework \#2}}\\
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[2]{\frac{\mathrm{d}}{\mathrm{d}#2} \left(#1\right)}
+
+% For compact derivatives
+\newcommand{\derivcomp}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #2} \left(#1\right)}
+
+% For compact partial derivatives
+\newcommand{\pderivcomp}[2]{\frac{\partial #1}{\partial #2}}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\nobreak\extramarks{Problem 1}{}\nobreak{}
+
+\pagebreak
+
+\begin{homeworkProblem}[Problem 1]
+
+    Assume your AV has been officially rolled out in a hilly city like San Francisco. 
+    But suddenly you find that, in some of the steep streets, your AVs cannot parked well, 
+    namely, the AV would roll away when parked.  
+    What is the quickest way to fix the problem with minimum cost? 
+
+    \section{Solution}
+
+    One very simple and quick way to fix this problem would be
+    to issue a software update that will use the AV's on-board inclinometer 
+    readings to avoid parking on steep streets, or turn the wheels in a way that
+    the AV will not roll away when parked.
+    The software update could
+    be as simple as a threshold check on the inclinometer readings, and
+    if the readings exceed a certain threshold, the AV will not park
+    on that street, or will turn the wheels in a way that the AV will not roll away.
+    This solution is quick and can be implemented with minimal cost, as it
+    only requires a software update to the AVs.
+    \vspace{0.5cm}
+
+    However, this solution is not sustainable in the long run, as avoiding
+    steep streets would limit parking options for the AVs, and turning the
+    wheels in a way that the AV will not roll away may not be a foolproof
+    solution. A more sustainable solution would be to design the AVs with
+    a parking brake system that can be engaged when parked on steep streets.
+    \vspace{0.5cm}
+
+    The parking brake system would be designed to engage when the AV is parked on a steep street,
+    preventing the AV from rolling away. The parking brake system could be activated
+    automatically by the AV's software when the inclinometer readings
+    exceed a certain threshold. This would make it so that the angle $\alpha$ of the street
+    would be taken into account when parking the AV, as shown by the following equation:
+
+    \begin{equation}
+        - \frac{a_1}{h} \cos(\alpha) \leq \frac{\dot{v}}{g} + \sin(\alpha) \leq \frac{a_2}{h} \cos(\alpha)
+    \end{equation}
+
+    where $a_1$ and $a_2$ are the minimum and maximum acceleration of the AV, $h$ is the height of the center of mass of the AV, $\dot{v}$ is the velocity of the AV, and $g$ is the acceleration due to gravity.
+    \vspace{0.5cm}
+
+
+\end{homeworkProblem}
+
+\end{document}
